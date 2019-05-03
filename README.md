@@ -5,7 +5,7 @@
 [![Build Status](https://travis-ci.org/jonas-schievink/pkg-version.svg?branch=master)](https://travis-ci.org/jonas-schievink/pkg-version)
 
 This crate provides macros (`pkg_version_major!`, etc.) that expand to the Cargo
-package version, parsed into an integer literal.
+package version, as an integer literal.
 
 Previously, the only way to access the package version was by using
 `env!("CARGO_PKG_VERSION_MAJOR")` etc., but doing that always results in a
