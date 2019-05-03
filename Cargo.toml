@@ -1,6 +1,6 @@
 [package]
 name = "pkg-version"
-version = "0.0.0"
+version = "0.1.0"
 authors = ["Jonas Schievink <jonasschievink@gmail.com>"]
 edition = "2018"
 description = "Macros expanding to the package version"
