@@ -1,0 +1,14 @@
+[package]
+name = "pkg-version-impl"
+version = "0.1.0"
+authors = ["Jonas Schievink <jonasschievink@gmail.com>"]
+edition = "2018"
+description = "Implementation details of the `pkg-version` crate"
+documentation = "https://docs.rs/pkg-version-impl/"
+license = "0BSD"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+proc-macro-hack = "0.5.5"

@@ -1,0 +1,53 @@
+[package]
+name = "pkg-version"
+version = "0.0.0"
+authors = ["Jonas Schievink <jonasschievink@gmail.com>"]
+edition = "2018"
+description = "Macros expanding to the package version"
+documentation = "https://docs.rs/pkg-version/"
+repository = "https://github.com/jonas-schievink/pkg-version.git"
+keywords = ["crate", "macro", "const", "constant"]
+categories = ["development-tools::build-utils"]
+readme = "README.md"
+license = "0BSD"
+
+[dependencies]
+pkg-version-impl = { path = "pkg-version-impl", version = "0.1.0" }
+proc-macro-hack = "0.5.5"
+
+[dev-dependencies]
+version-sync = "0.8"
+
+
+# cargo-release configuration
+[package.metadata.release]
+tag-message = "{{version}}"
+no-dev-version = true
+pre-release-commit-message = "Release {{version}}"
+
+# Change the changelog's `Unreleased` section to refer to this release and
+# prepend new `Unreleased` section
+[[package.metadata.release.pre-release-replacements]]
+file    = "CHANGELOG.md"
+search  = "## Unreleased"
+replace = "## Unreleased\n\nNo changes.\n\n## {{version}} - {{date}}"
+
+# Bump the version inside the example manifest in `README.md`
+[[package.metadata.release.pre-release-replacements]]
+file    = "README.md"
+search  = 'pkg-version = "[a-z0-9\\.-]+"'
+replace = 'pkg-version = "{{version}}"'
+
+# Bump the version referenced by the `html_root_url` attribute in `lib.rs`
+[[package.metadata.release.pre-release-replacements]]
+file    = "src/lib.rs"
+search  = "https://docs.rs/pkg-version/[a-z0-9\\.-]+"
+replace = "https://docs.rs/pkg-version/{{version}}"
+
+# Bump the version referenced in the doc example in `lib.rs`
+[[package.metadata.release.pre-release-replacements]]
+file    = "src/lib.rs"
+search  = "\"[0-9\\.-]+[0-9a-z\\.-]*\""
+replace = "\"{{version}}\""
+
+[workspace]
