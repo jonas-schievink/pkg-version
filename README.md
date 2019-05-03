@@ -1,10 +1,10 @@
-# Access the Cargo package version in constants
+# `pkg-version` - Macros for accessing your crate version
 
 [![crates.io](https://img.shields.io/crates/v/pkg-version.svg)](https://crates.io/crates/pkg-version)
 [![docs.rs](https://docs.rs/pkg-version/badge.svg)](https://docs.rs/pkg-version/)
 [![Build Status](https://travis-ci.org/jonas-schievink/pkg-version.svg?branch=master)](https://travis-ci.org/jonas-schievink/pkg-version)
 
-This crate provides macros (`pkg_verison_major!`, etc.) that expand to the Cargo
+This crate provides macros (`pkg_version_major!`, etc.) that expand to the Cargo
 package version, parsed into an integer literal.
 
 Previously, the only way to access the package version was by using
