@@ -14,7 +14,7 @@
 //!
 //! fn main() {
 //!     let version = format!("{}.{}.{}", MAJOR, MINOR, PATCH);
-//!     assert_eq!(version, "0.1.0");
+//!     assert_eq!(version, "0.1.1");
 //!
 //!     println!("I am version {}", version);
 //! }
@@ -22,7 +22,7 @@
 
 #![no_std]
 
-#![doc(html_root_url = "https://docs.rs/pkg-version/0.1.0")]
+#![doc(html_root_url = "https://docs.rs/pkg-version/0.1.1")]
 #![warn(missing_debug_implementations, rust_2018_idioms)]
 
 use proc_macro_hack::proc_macro_hack;
