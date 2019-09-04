@@ -20,6 +20,8 @@
 //! }
 //! ```
 
+#![no_std]
+
 #![doc(html_root_url = "https://docs.rs/pkg-version/0.1.0")]
 #![warn(missing_debug_implementations, rust_2018_idioms)]
 
