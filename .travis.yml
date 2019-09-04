@@ -10,10 +10,13 @@ env:
     - RUSTFLAGS="--deny warnings"
     - RUST_BACKTRACE=1
     - CARGO_INCREMENTAL=0  # decrease size of `target` to make the cache smaller
-  matrix:
-    - FEATURES=""  # default configuration
+    - NO_STD_TARGET=thumbv7em-none-eabi
 script:
-  - cargo test --all $FEATURES
+  # Run tests on x86-64
+  - cargo test --all
+  # Make sure it builds on #![no_std]-only targets
+  - rustup target add $NO_STD_TARGET
+  - cargo build --target $NO_STD_TARGET
 notifications:
   email:
     on_success: never
