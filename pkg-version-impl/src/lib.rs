@@ -14,6 +14,11 @@ use proc_macro::TokenStream;
 use proc_macro_hack::proc_macro_hack;
 use std::env;
 
+/// A type large enough to hold a version component.
+///
+/// This should match what the `semver` crate uses.
+type VersionNum = u64;
+
 #[proc_macro_hack]
 pub fn pkg_version_major(input: TokenStream) -> TokenStream {
     if !input.is_empty() {
@@ -22,7 +27,7 @@ pub fn pkg_version_major(input: TokenStream) -> TokenStream {
 
     let version = env::var("CARGO_PKG_VERSION_MAJOR")
         .unwrap()
-        .parse::<u32>()
+        .parse::<VersionNum>()
         .unwrap();
 
     version.to_string().parse().unwrap()
@@ -36,7 +41,7 @@ pub fn pkg_version_minor(input: TokenStream) -> TokenStream {
 
     let version = env::var("CARGO_PKG_VERSION_MINOR")
         .unwrap()
-        .parse::<u32>()
+        .parse::<VersionNum>()
         .unwrap();
 
     version.to_string().parse().unwrap()
@@ -50,7 +55,7 @@ pub fn pkg_version_patch(input: TokenStream) -> TokenStream {
 
     let version = env::var("CARGO_PKG_VERSION_PATCH")
         .unwrap()
-        .parse::<u32>()
+        .parse::<VersionNum>()
         .unwrap();
 
     version.to_string().parse().unwrap()
