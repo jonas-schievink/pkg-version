@@ -1,5 +1,8 @@
 //! Implementation details of the [`pkg-version`] crate.
 //!
+//! Do not use this crate directly. It does not provide a stable API and might
+//! break at any time. Use [`pkg-version`] instead.
+//!
 //! [`pkg-version`]: https://docs.rs/pkg-version
 
 #![doc(html_root_url = "https://docs.rs/pkg-version-impl/0.0.0")]

@@ -3,8 +3,12 @@ name = "pkg-version-impl"
 version = "0.1.0"
 authors = ["Jonas Schievink <jonasschievink@gmail.com>"]
 edition = "2018"
-description = "Implementation details of the `pkg-version` crate"
+description = """
+Implementation details of the `pkg-version` crate. Do not use this crate, it
+does not provide a stable API.
+"""
 documentation = "https://docs.rs/pkg-version-impl/"
+repository = "https://github.com/jonas-schievink/pkg-version.git"
 license = "0BSD"
 
 [lib]
