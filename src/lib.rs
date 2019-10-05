@@ -38,3 +38,21 @@ pub use pkg_version_impl::pkg_version_minor;
 /// Expands to the patch version number of the Cargo package, as an integer literal.
 #[proc_macro_hack]
 pub use pkg_version_impl::pkg_version_patch;
+
+/// Make sure passing any arguments results in an error.
+///
+/// ```compile_fail
+/// use pkg_version::*;
+/// pkg_version_major!(_);
+/// ```
+///
+/// ```compile_fail
+/// use pkg_version::*;
+/// pkg_version_minor!(_);
+/// ```
+///
+/// ```compile_fail
+/// use pkg_version::*;
+/// pkg_version_patch!(_);
+/// ```
+const _COMPILE_FAIL: () = ();
