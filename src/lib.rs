@@ -21,21 +21,32 @@
 //! ```
 
 #![no_std]
-
 #![doc(html_root_url = "https://docs.rs/pkg-version/0.1.1")]
 #![warn(missing_debug_implementations, rust_2018_idioms)]
 
 use proc_macro_hack::proc_macro_hack;
 
 /// Expands to the major version number of the Cargo package, as an integer literal.
+///
+/// The resulting integer literal is *unsuffixed*, meaning that it does not use a type suffix like
+/// `1u32`. This means that it can be used to initialize a variable of any integer type, as long as
+/// the version number fits. If the number doesn't fit, the compiler will report an error.
 #[proc_macro_hack]
 pub use pkg_version_impl::pkg_version_major;
 
 /// Expands to the minor version number of the Cargo package, as an integer literal.
+///
+/// The resulting integer literal is *unsuffixed*, meaning that it does not use a type suffix like
+/// `1u32`. This means that it can be used to initialize a variable of any integer type, as long as
+/// the version number fits. If the number doesn't fit, the compiler will report an error.
 #[proc_macro_hack]
 pub use pkg_version_impl::pkg_version_minor;
 
 /// Expands to the patch version number of the Cargo package, as an integer literal.
+///
+/// The resulting integer literal is *unsuffixed*, meaning that it does not use a type suffix like
+/// `1u32`. This means that it can be used to initialize a variable of any integer type, as long as
+/// the version number fits. If the number doesn't fit, the compiler will report an error.
 #[proc_macro_hack]
 pub use pkg_version_impl::pkg_version_patch;
 
