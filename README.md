@@ -21,7 +21,7 @@ Add an entry to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-pkg-version = "0.1.1"
+pkg-version = "1.0.0"
 ```
 
 Check the [API Documentation](https://docs.rs/pkg-version/) for how to use the
