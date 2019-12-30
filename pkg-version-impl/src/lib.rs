@@ -8,6 +8,7 @@
 #![doc(html_root_url = "https://docs.rs/pkg-version-impl/0.0.0")]
 #![warn(missing_debug_implementations, rust_2018_idioms)]
 
+#[allow(unused_extern_crates)]  // ignore warning on nightly
 extern crate proc_macro;
 
 use proc_macro::TokenStream;
