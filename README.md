@@ -2,7 +2,7 @@
 
 [![crates.io](https://img.shields.io/crates/v/pkg-version.svg)](https://crates.io/crates/pkg-version)
 [![docs.rs](https://docs.rs/pkg-version/badge.svg)](https://docs.rs/pkg-version/)
-[![Build Status](https://travis-ci.org/jonas-schievink/pkg-version.svg?branch=master)](https://travis-ci.org/jonas-schievink/pkg-version)
+![CI](https://github.com/jonas-schievink/pkg-version/workflows/CI/badge.svg)
 
 This crate provides macros (`pkg_version_major!`, etc.) that expand to the Cargo
 package version, as an integer literal.
